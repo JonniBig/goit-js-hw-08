@@ -9,7 +9,7 @@ const refs = {
 
 fromLocalStorage();
 
-refs.form.addEventListener('submti', onSubmit);
+refs.form.addEventListener('submit', onSubmit);
 refs.form.addEventListener('input', throttle(onInput, 500));
 
 function onInput(e) {
@@ -26,6 +26,7 @@ function onSubmit(e) {
   localStorage.removeItem('STORAGE_KEY');
   refs.form.reset();
 }
+
 function fromLocalStorage() {
   const defaulValue = JSON.parse(localStorage.getItem('STORAGE_KEY'));
   if (!defaulValue) {
